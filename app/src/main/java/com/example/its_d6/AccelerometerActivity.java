@@ -43,7 +43,7 @@ public class AccelerometerActivity extends AppCompatActivity {
                 int z = Math.abs(Math.round(event.values[2]*500)+5000);
                 barZ.setProgress(z);
 
-                Log.i("ACC-IN ", x+"\t"+y+"\t"+z);
+                Log.i("ACC-INT", x+"\t"+y+"\t"+z);
             }
 
             @Override

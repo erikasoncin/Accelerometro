@@ -24,13 +24,15 @@ public class GpsActivity extends AppCompatActivity {
             @Override
             public void onLocationChanged(Location location) {
                 Log.i("GPS",
-                        "\tLng: "+location.getLatitude()+
-                        "\tAlt: "+location.getAltitude()+
-                         "\tAccurancy: "+location.getAccuracy());
+                        "Lat: "+location.getLatitude()+
+                                "\tLng: "+location.getLongitude()+
+                                "\tAlt: "+location.getAltitude()+
+                                "\tAccurancy: "+location.getAccuracy());
             }
 
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
+                Log.i("GPSStatus", provider+" "+status);
 
             }
 
@@ -46,7 +48,7 @@ public class GpsActivity extends AppCompatActivity {
 
         };
 
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0,
                 locationListener);
     }
 }
